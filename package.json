@@ -1,11 +1,18 @@
 {
-  "name": "algorithm-challenge",
-  "module": "index.ts",
+  "name": "algorithm-challenge-cli",
+  "module": "src/index.ts",
   "type": "module",
+  "bin": {
+    "algorithm": "src/index.ts"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/yargs": "^17.0.32"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "yargs": "^17.7.2"
   }
 }
