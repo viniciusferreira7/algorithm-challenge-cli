@@ -1,6 +1,6 @@
 import yargs from 'yargs';
-import { hideBin } from "yargs/helpers"
-import { FindTheHHappyNumbers } from './algorithm/find-the-happy-numbers';
+import { hideBin } from "yargs/helpers";
+import { findTheHappyNumbers } from './algorithm/find-the-happy-numbers';
 
 
 const algorithms = [
@@ -40,7 +40,7 @@ yargs(hideBin(process.argv))
     handler: (argv) => {
       switch (argv.algorithmNumber) {
         case 1:
-          FindTheHHappyNumbers(argv.inputNumber);
+          findTheHappyNumbers(argv.inputNumber);
           break;
         default:
           console.log('Invalid algorithm number. Please choose a valid algorithm number (1).');
