@@ -6,11 +6,10 @@ function removeAccents(text: string) {
 }
 
 export function canFormPalindrome(text: string){
+  const textWithoutAccents = removeAccents(text)
+  const formattedText = (textWithoutAccents.replace(/[^a-zA-Z]/g, ""))
   
-  if(text.length >= 1){
-    const textWithoutAccents = removeAccents(text)
-
-    const formattedText = (textWithoutAccents.replace(/[^a-zA-Z]/g, ""))
+  if(formattedText.length >= 1){
     const transformedIntoObject  = Object.fromEntries(formattedText.split('').map((letter => [letter, 0])))
 
     for(const letter of formattedText){

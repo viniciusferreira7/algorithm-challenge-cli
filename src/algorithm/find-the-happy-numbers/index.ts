@@ -71,10 +71,10 @@ export function findTheHappyNumbers(value: number) {
  const { happyNumbers } = findManyHappyNumbers(value)
 
 if(isHappyNumber){
-  console.log(chalk.greenBright('🚀 The value provided is happy number!'))
+  console.log(chalk.greenBright('🚀 The value provided is happy a number!'))
   console.log(chalk.greenBright())
 } else {
-  console.log(chalk.redBright('❌ The value provided is not happy number!'))
+  console.log(chalk.redBright('❌ The value provided is not a happy number!'))
 
 }
 
