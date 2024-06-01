@@ -33,6 +33,8 @@ Create a JavaScript function called `findTheHappyNumbers` that determines whethe
 ### Function `findTheHappyNumbers`
 
 ```javascript
+import chalk from 'chalk'
+
 function splitInNumber(value: number){
   const convertNumberToString = value.toString();
 
@@ -92,8 +94,10 @@ function findManyHappyNumbers(value: number){
 }
 
 export function findTheHappyNumbers(value: number) {
-	if (typeof value !== "number" || !value) {
-		console.log(`The value provided is not a valid option: ${value}`);
+  const isNumber = !!Number(value)
+
+	if (!isNumber) {
+		console.log(chalk.redBright(`❌ The value provided is not a valid option: ${chalk.yellow(value)}`));
 
 		return;
 	}
@@ -101,9 +105,21 @@ export function findTheHappyNumbers(value: number) {
  const { isHappyNumber, number, seenNumbers } = findHappyNumber(value)
  const { happyNumbers } = findManyHappyNumbers(value)
 
- console.log({isHappyNumber, number, seenNumbers,})
- console.log(`happy numbers between 1 and ${value}`, happyNumbers)
+if(isHappyNumber){
+  console.log(chalk.greenBright('🚀 The value provided is happy number!'))
+  console.log(chalk.greenBright())
+} else {
+  console.log(chalk.redBright('❌ The value provided is not happy number!'))
+
 }
+
+ console.log(`${chalk.cyanBright('Numbers seen:')} ${chalk.yellowBright(seenNumbers)}`)
+ console.log(chalk.greenBright(`happy numbers between ${chalk.yellowBright(1)} and ${chalk.yellowBright(value)}: ${chalk.yellowBright(happyNumbers)}`))
+}
+
+
+
+
 
 
 
