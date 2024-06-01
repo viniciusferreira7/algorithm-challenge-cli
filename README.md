@@ -19,8 +19,9 @@ List of algorithms:
 1 - Find the Happy Numbers
 ```
 
-### Run Algorithm: Find the Happy Numbers
-#### Executes the specified algorithm by passing the corresponding number and its parameters.
+### Run Algorithm: 
+# Find the Happy Numbers
+## Executes the specified algorithm by passing the corresponding number and its parameters.
 
 ```sh
 algorithm run 1 <parameters>

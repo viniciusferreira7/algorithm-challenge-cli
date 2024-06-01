@@ -1,10 +1,12 @@
 import yargs from 'yargs';
 import { hideBin } from "yargs/helpers";
 import { findTheHappyNumbers } from './algorithm/find-the-happy-numbers';
+import { canFormPalindrome } from './algorithm/permutable-palindrome-verification';
 
 
 const algorithms = [
   'Find the Happy Numbers',
+  'Permutable Palindrome Verification',
 ]
 
 yargs(hideBin(process.argv))
@@ -23,24 +25,27 @@ yargs(hideBin(process.argv))
 
 yargs(hideBin(process.argv))
   .command({
-    command: 'run <algorithmNumber> <inputNumber>',
-    describe: 'Run a specific algorithm with an input number',
+    command: 'run <algorithmNumber> <input>',
+    describe: 'Run a specific algorithm with an input',
     builder: {
       algorithmNumber: {
         describe: 'Number of the algorithm to run',
         type: 'number',
         demandOption: true,
       },
-      inputNumber: {
-        describe: 'Input number for the algorithm',
-        type: 'number',
+      input: {
+        describe: 'Input for the algorithm',
+        type: 'string',
         demandOption: true,
       }
     },
     handler: (argv) => {
       switch (argv.algorithmNumber) {
         case 1:
-          findTheHappyNumbers(argv.inputNumber);
+          findTheHappyNumbers(argv.input);
+          break;
+        case 2:
+          canFormPalindrome(argv.input);
           break;
         default:
           console.log('Invalid algorithm number. Please choose a valid algorithm number (1).');
