@@ -2,11 +2,13 @@ import yargs from 'yargs';
 import { hideBin } from "yargs/helpers";
 import { findTheHappyNumbers } from './algorithm/find-the-happy-numbers';
 import { canFormPalindrome } from './algorithm/permutable-palindrome-verification';
+import { canFormAnagrams } from './algorithm/can-form-anagrams';
 
 
 const algorithms = [
   'Find the Happy Numbers',
   'Permutable Palindrome Verification',
+  'Anagram Verification',
 ]
 
 yargs(hideBin(process.argv))
@@ -47,6 +49,9 @@ yargs(hideBin(process.argv))
         case 2:
           canFormPalindrome(argv.input);
           break;
+        case 3:
+          canFormAnagrams(argv.input);
+          break;
         default:
           console.log('Invalid algorithm number. Please choose a valid algorithm number (1).');
       }
@@ -55,6 +60,3 @@ yargs(hideBin(process.argv))
   .demandCommand(1, 'You need at least one command before moving on')
   .help()
   .argv;
-
-
-//TODO: Install biome lint to test

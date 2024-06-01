@@ -3,6 +3,19 @@
 ## Description
 This CLI offers a selection of algorithms that you can list and execute directly from the terminal. Currently, the CLI supports the "Find the Happy Numbers" algorithm.
 
+## Installation
+Make sure you have bun installed. Clone this repository and navigate to the project directory. Install the necessary dependencies (if any).
+
+## Usage
+
+To install dependencies:
+
+```bash
+bun install
+```
+Run the commands as described above to list and execute algorithms directly from the terminal.
+
+
 ## Commands
 
 ### List Available Algorithms
@@ -110,19 +123,6 @@ algorithm run 2 145
 ## Options
 - algorithm run 1 <number>: Runs the "Find the Happy Numbers" algorithm with a single parameter that should be a number.
 - algorithm run 2 <string>: Runs the "Permutable Palindrome Verifications" algorithm with a single parameter that should be a string.
-
-## Installation
-Make sure you have bun installed. Clone this repository and navigate to the project directory. Install the necessary dependencies (if any).
-
-## Usage
-
-To install dependencies:
-
-```bash
-bun install
-```
-Run the commands as described above to list and execute algorithms directly from the terminal.
-
 
 
 
