@@ -22,53 +22,72 @@ Run the commands as described above to list and execute algorithms directly from
 Displays a list of all available algorithms.
 
 ```sh
-algorithm list
+bun start
 ```
 
 ### Expected output:
 
 ```sh
-List of algorithms:
-1 - Find the Happy Numbers
-2 - Permutable Palindrome Verification
+Welcome to the algorithm CLI
+
+Which you want to test? 
+
+? Select a algorithm manager (Use arrow keys)
+❯ Find the Happy Numbers
+  Permutable Palindrome Verification
+- Anagram Verification ⚠️ (disabled)
 ```
 
 ### Run Algorithm: 
 # Find the Happy Numbers
-## Executes the specified algorithm by passing the corresponding number and its parameters.
+## Selects find the Happy Numbers algorithm.
 
 ```sh
-algorithm run 1 <parameters>
+Welcome to the algorithm CLI
+
+Which you want to test? 
+
+? Select a algorithm manager (Use arrow keys)
+❯ Find the Happy Numbers
+  Permutable Palindrome Verification
+- Anagram Verification ⚠️ (disabled)
 ```
 
 ### Example
-#### To list happy numbers up to 45:
+#### To list happy numbers up to 19:
 
 ```sh
-algorithm run 1 45
+? Select a package manager Find the Happy Numbers
+✔ Executing!
+? Enter a number 19
 ```
 
 ### Expected output:
 ```sh
-❌ The value provided is not a happy number!
+✔ The value provided is happy a number!
+
+Numbers seen: 82,68,100
+
+happy numbers between 1 and 19: 1,7,10,13,19
+```
+
+### To list happy numbers up to 45:
+
+```sh
+? Select a package manager Find the Happy Numbers
+✔ Executing!
+? Enter a number 45
+```
+
+
+### Expected output:
+
+```sh
+✖ The value provided is not a happy number!
+
 Numbers seen: 41,17,50,25,29,85,89,145,42,20,4,16,37,58
+
 happy numbers between 1 and 45: 1,7,10,13,19,23,28,31,32,44
-```
-
-### To list happy numbers up to 139:
-
-```sh
-algorithm run 1 139
-```
-
-
-### Expected output:
-
-```sh
-🚀 The value provided is happy a number!
-
-Numbers seen: 91,82,68,100
-happy numbers between 1 and 139: 1,7,10,13,19,23,28,31,32,44,49,68,70,79,82,86,91,94,97,100,103,109,129,130,133,139
 ```
 
 ### Run Algorithm: 

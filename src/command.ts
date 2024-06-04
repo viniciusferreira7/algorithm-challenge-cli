@@ -63,7 +63,7 @@ async function askWhichAlgorithm(){
   console.log(`${chalk.bgBlue('Which you want to test? \n')}`)
 
   const answer = await select({
-    message: 'Select a package manager',
+    message: 'Select a algorithm manager',
     choices: algorithmList,
   });
 
