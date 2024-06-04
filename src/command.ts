@@ -106,13 +106,13 @@ async function handleInput(algorithm: Algorithm){
       arrayOfParams.push(...param)
       
     }
+    
+  }
+  
+  const params = Object.fromEntries([arrayOfParams])
 
-    const params = Object.fromEntries([arrayOfParams])
-
-    if(algorithm.execute){
-      await algorithm.execute({...params})
-    }
-
+  if(algorithm.execute){
+    await algorithm.execute({...params})
   }
 
 }

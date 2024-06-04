@@ -54,7 +54,7 @@ Which you want to test?
 ```
 
 ### Example
-#### To list happy numbers up to 19:
+#### To list happy numbers up to `19`:
 
 ```sh
 ? Select a package manager Find the Happy Numbers
@@ -71,7 +71,7 @@ Numbers seen: 82,68,100
 happy numbers between 1 and 19: 1,7,10,13,19
 ```
 
-### To list happy numbers up to 45:
+### To list happy numbers up to `45`:
 
 ```sh
 ? Select a package manager Find the Happy Numbers
@@ -90,6 +90,21 @@ Numbers seen: 41,17,50,25,29,85,89,145,42,20,4,16,37,58
 happy numbers between 1 and 45: 1,7,10,13,19,23,28,31,32,44
 ```
 
+### To list happy numbers up to `test`:
+
+```sh
+? Select a package manager Find the Happy Numbers
+✔ Executing!
+? Enter a number test
+```
+
+
+### Expected output:
+
+```sh
+✖ The value provided is not a valid option: test
+```
+
 ### Run Algorithm: 
 # Permutable Palindrome Verification
 ##  Selects permutable Palindrome Verification.
@@ -106,7 +121,7 @@ Which you want to test?
 ```
 
 ### Example
-#### Verify if civic is a palindrome:
+#### Verify if `civic` is a palindrome:
 
 ```sh
 ? Select a algorithm manager Permutable Palindrome Verification
@@ -119,7 +134,7 @@ Which you want to test?
 ✔ It`s a palindrome: civic
 ```
 
-### Verify if hello is a palindrome:
+### Verify if `hello` is a palindrome:
 
 ```sh
 algorithm run 2 hello
@@ -132,7 +147,7 @@ algorithm run 2 hello
 ✖ This text is not palindrome: hello
 ```
 
-### Verify if 145 is a palindrome:
+### Verify if `145` is a palindrome:
 
 ```sh
 ✖ Invalid parameter

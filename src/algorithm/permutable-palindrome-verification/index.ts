@@ -12,7 +12,7 @@ export async function canFormPalindrome({ text }: {text: string}){
   await sleep(1000)
 
   const textWithoutAccents = removeAccents(text)
-  const formattedText = (textWithoutAccents.replace(/[^a-zA-Z]/g, ""))
+  const formattedText = (textWithoutAccents.replace(/[^a-zA-Z]/g, "")).toLowerCase()
   
   if(formattedText.length >= 1){
     const transformedIntoObject  = Object.fromEntries(formattedText.split('').map((letter => [letter, 0])))
@@ -33,7 +33,7 @@ export async function canFormPalindrome({ text }: {text: string}){
     }
 
     if(oddCount > 1){
-      spinner.error({ text: `${chalk.redBright('This text is not palindrome:', chalk.yellowBright(text))}` })
+      spinner.error({ text: `${chalk.redBright('This text is not palindrome:', chalk.yellowBright(text))}, ${formattedText}` })
     } else {
       spinner.success({ text: `${chalk.greenBright('It`s a palindrome:', chalk.yellowBright(text))}`})
     }
