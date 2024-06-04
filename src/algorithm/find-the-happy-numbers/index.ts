@@ -61,16 +61,18 @@ function findManyHappyNumbers(value: number){
 }
 
 export async function findTheHappyNumbers({ value } :{ value: number }) {
+  const spinner = createSpinner(`Checking if and ${value} is a happy number`).start()
+  await sleep(800)
+
   const isNumber = !!Number(value)
 
 	if (!isNumber) {
-		console.log(chalk.redBright(`❌ The value provided is not a valid option: ${chalk.yellow(value)} \n`));
+		spinner.error({ text: chalk.redBright(`The value provided is not a valid option: ${chalk.yellow(value)} \n`) });
 
 		return;
 	}
 
-  const spinner = createSpinner(`Checking if and ${value} is a happy number`).start()
-  await sleep(800)
+  
 
 
  const { isHappyNumber, seenNumbers } = findHappyNumber(value)

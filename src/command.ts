@@ -37,7 +37,13 @@ const algorithmList = [
   {
     name: 'Permutable Palindrome Verification',
     value: 'permutable_palindrome_verification',
-    // execute: canFormPalindrome,
+    params: [
+      {
+        message: 'Enter a text',
+        name: 'text'
+      }      
+    ],
+    execute: canFormPalindrome,
   },
   {
     name: 'Anagram Verification ⚠️',

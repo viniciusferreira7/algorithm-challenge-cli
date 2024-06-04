@@ -1,11 +1,16 @@
 import chalk from 'chalk'
+import { sleep } from '../../utils/sleep'
+import { createSpinner } from 'nanospinner'
 
 function removeAccents(text: string) {
   // biome-ignore lint/suspicious/noMisleadingCharacterClass: <explanation>
   return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
 }
 
-export function canFormPalindrome(text: string){
+export async function canFormPalindrome({ text }: {text: string}){
+  const spinner = createSpinner('checking if the information could be a palindrome').start()
+  await sleep(800)
+
   const textWithoutAccents = removeAccents(text)
   const formattedText = (textWithoutAccents.replace(/[^a-zA-Z]/g, ""))
   
@@ -28,13 +33,13 @@ export function canFormPalindrome(text: string){
     }
 
     if(oddCount > 1){
-      console.log(chalk.redBright('❌ This word is not palindrome:', chalk.yellowBright(text)))
+      spinner.error({ text: `${chalk.redBright('This text is not palindrome:', chalk.yellowBright(text))}` })
     } else {
-      console.log(chalk.greenBright('✔️  It`s a palindrome:', chalk.yellowBright(text)))
+      spinner.success({ text: `${chalk.greenBright('It`s a palindrome:', chalk.yellowBright(text))}`})
     }
 
   } else {
-    console.log(chalk.redBright('❌ Invalid parameter'))  
+    spinner.error({ text: chalk.redBright('❌ Invalid parameter')})  
   }
 
 }
