@@ -1,4 +1,6 @@
 import chalk from 'chalk'
+import { sleep } from '../../utils/sleep';
+import { createSpinner } from 'nanospinner';
 
 function splitInNumber(value: number){
   const convertNumberToString = value.toString();
@@ -58,28 +60,30 @@ function findManyHappyNumbers(value: number){
   return { happyNumbers }
 }
 
-export function findTheHappyNumbers(value: number) {
+export async function findTheHappyNumbers({ value } :{ value: number }) {
   const isNumber = !!Number(value)
 
 	if (!isNumber) {
-		console.log(chalk.redBright(`❌ The value provided is not a valid option: ${chalk.yellow(value)}`));
+		console.log(chalk.redBright(`❌ The value provided is not a valid option: ${chalk.yellow(value)} \n`));
 
 		return;
 	}
+
+  const spinner = createSpinner(`Checking if and ${value} is a happy number`).start()
+  await sleep(800)
+
 
  const { isHappyNumber, seenNumbers } = findHappyNumber(value)
  const { happyNumbers } = findManyHappyNumbers(value)
 
 if(isHappyNumber){
-  console.log(chalk.greenBright('🚀 The value provided is happy a number!'))
-  console.log(chalk.greenBright())
+  spinner.success({ text: chalk.greenBright('The value provided is happy a number! \n') })
 } else {
-  console.log(chalk.redBright('❌ The value provided is not a happy number!'))
+  spinner.error({ text: chalk.redBright('The value provided is not a happy number! \n') })
 
 }
-
- console.log(`${chalk.cyanBright('Numbers seen:')} ${chalk.yellowBright(seenNumbers)}`)
- console.log(chalk.greenBright(`happy numbers between ${chalk.yellowBright(1)} and ${chalk.yellowBright(value)}: ${chalk.yellowBright(happyNumbers)}`))
+ console.log(`${chalk.whiteBright('Numbers seen:')} ${chalk.yellowBright(seenNumbers)} \n`)
+ console.log(chalk.whiteBright(`happy numbers between ${chalk.yellowBright(1)} and ${chalk.yellowBright(value)}: ${chalk.yellowBright(happyNumbers)} \n`))
 }
 
 
