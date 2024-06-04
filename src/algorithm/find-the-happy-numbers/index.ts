@@ -61,8 +61,8 @@ function findManyHappyNumbers(value: number){
 }
 
 export async function findTheHappyNumbers({ value } :{ value: number }) {
-  const spinner = createSpinner(`Checking if and ${value} is a happy number`).start()
-  await sleep(800)
+  const spinner = createSpinner(`Checking if and ${value} is a happy number...`).start()
+  await sleep(1000)
 
   const isNumber = !!Number(value)
 
@@ -71,8 +71,6 @@ export async function findTheHappyNumbers({ value } :{ value: number }) {
 
 		return;
 	}
-
-  
 
 
  const { isHappyNumber, seenNumbers } = findHappyNumber(value)

@@ -18,7 +18,7 @@ Run the commands as described above to list and execute algorithms directly from
 
 ## Commands
 
-### List Available Algorithms
+### Start
 Displays a list of all available algorithms.
 
 ```sh
@@ -92,22 +92,31 @@ happy numbers between 1 and 45: 1,7,10,13,19,23,28,31,32,44
 
 ### Run Algorithm: 
 # Permutable Palindrome Verification
-## Executes the specified algorithm by passing the corresponding number and its parameters.
+##  Selects permutable Palindrome Verification.
 
 ```sh
-algorithm run 2 <parameters>
+Welcome t  the algorithm CLI
+
+Which you want to test? 
+
+? Select a algorithm manager
+  Find the Happy Numbers
+❯ Permutable Palindrome Verification
+- Anagram Verification ⚠️ (disabled)
 ```
 
 ### Example
 #### Verify if civic is a palindrome:
 
 ```sh
-algorithm run 2 civic
+? Select a algorithm manager Permutable Palindrome Verification
+✔ Executing!
+? Enter a text civic
 ```
 
 ### Expected output:
 ```sh
-✔️  It`s a palindrome: civic
+✔ It`s a palindrome: civic
 ```
 
 ### Verify if hello is a palindrome:
@@ -120,13 +129,13 @@ algorithm run 2 hello
 ### Expected output:
 
 ```sh
-❌ This word is not palindrome: hello
+✖ This text is not palindrome: hello
 ```
 
 ### Verify if 145 is a palindrome:
 
 ```sh
-algorithm run 2 145
+✖ Invalid parameter
 ```
 
 

@@ -8,8 +8,8 @@ function removeAccents(text: string) {
 }
 
 export async function canFormPalindrome({ text }: {text: string}){
-  const spinner = createSpinner('checking if the information could be a palindrome').start()
-  await sleep(800)
+  const spinner = createSpinner('checking if the information could be a palindrome...').start()
+  await sleep(1000)
 
   const textWithoutAccents = removeAccents(text)
   const formattedText = (textWithoutAccents.replace(/[^a-zA-Z]/g, ""))
@@ -39,7 +39,7 @@ export async function canFormPalindrome({ text }: {text: string}){
     }
 
   } else {
-    spinner.error({ text: chalk.redBright('❌ Invalid parameter')})  
+    spinner.error({ text: chalk.redBright('Invalid parameter')})  
   }
 
 }
