@@ -105,6 +105,8 @@ happy numbers between 1 and 45: 1,7,10,13,19,23,28,31,32,44
 ✖ The value provided is not a valid option: test
 ```
 
+#### [seem more about it](https://github.com/viniciusferreira7/algorithm-challenge-cli/tree/main/src/algorithm/find-the-happy-numbers)
+
 ### Run Algorithm: 
 # Permutable Palindrome Verification
 ##  Selects permutable Palindrome Verification.
@@ -160,6 +162,8 @@ algorithm run 2 hello
 ❌ Invalid parameter
 ```
 
+#### [seem more about it](https://github.com/viniciusferreira7/algorithm-challenge-cli/tree/main/src/algorithm/permutable-palindrome-verification)
+
 ### Run Algorithm: 
 # Anagram Verification
 ## Selects anagram Verification algorithm.
@@ -204,6 +208,9 @@ Which you want to test?
 ```sh
 ✔ Theses text are anagrams of each other.
 ```
+
+#### [seem more about it](https://github.com/viniciusferreira7/algorithm-challenge-cli/tree/main/src/algorithm/can-form-anagrams)
+
 
 ## Available Algorithms
 - Find the Happy Numbers: Finds all happy numbers up to the specified number.
