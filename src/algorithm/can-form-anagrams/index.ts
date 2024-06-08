@@ -15,6 +15,12 @@ export async function canFormAnagrams({ first_text, second_text }: CanFormAnagra
   const firstTextInArray = formatText(first_text).split('')
   const secondTextInArray = formatText(second_text).split('')
 
+  if(!firstTextInArray.length || !secondTextInArray.length){
+    spinner.error({ text: chalk.redBright('Text contains special characters or numbers, which are not allowed.These text cannot be an anagram.') })
+
+    return
+  }
+
   if(firstTextInArray.length !== secondTextInArray.length){
     spinner.error({ text: chalk.redBright('These text cannot be an anagram.') })
 

@@ -194,6 +194,21 @@ Which you want to test?
 ✔ Theses text are anagrams of each other.
 ```
 
+###  Can form anagram `@54-` and `456`:
+
+```sh
+? Select a algorithm Anagram Verification
+✔ Executing!
+? Enter a first text @54-
+? Enter a second text 456
+```
+
+### Expected output:
+
+```sh
+✖ Text contains special characters or numbers, which are not allowed.These text cannot be an anagram.
+```
+
 ###  Can form anagram `não PoSsô` and `noa ossop`:
 
 ```sh
