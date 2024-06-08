@@ -35,7 +35,7 @@ Which you want to test?
 ? Select a algorithm (Use arrow keys)
 ❯ Find the Happy Numbers
   Permutable Palindrome Verification
-- Anagram Verification ⚠️ (disabled)
+- Anagram Verification
 ```
 
 ### Run Algorithm: 
@@ -50,7 +50,7 @@ Which you want to test?
 ? Select a algorithm (Use arrow keys)
 ❯ Find the Happy Numbers
   Permutable Palindrome Verification
-- Anagram Verification ⚠️ (disabled)
+- Anagram Verification
 ```
 
 ### Example
@@ -117,7 +117,7 @@ Which you want to test?
 ? Select a algorithm
   Find the Happy Numbers
 ❯ Permutable Palindrome Verification
-- Anagram Verification ⚠️ (disabled)
+- Anagram Verification
 ```
 
 ### Example
@@ -160,13 +160,54 @@ algorithm run 2 hello
 ❌ Invalid parameter
 ```
 
+### Run Algorithm: 
+# Anagram Verification
+## Selects anagram Verification algorithm.
+
+```sh
+Welcome to the algorithm CLI
+
+Which you want to test? 
+
+? Select a algorithm
+  Find the Happy Numbers
+  Permutable Palindrome Verification
+❯ Anagram Verification
+```
+
+### Example
+#### Can form anagram `listen` and `silent`:
+
+```sh
+? Select a algorithm Anagram Verification
+✔ Executing!
+? Enter a first text silent
+? Enter a second text listen
+```
+
+### Expected output:
+```sh
+✔ Theses text are anagrams of each other.
+```
+
+###  Can form anagram `não PoSsô` and `noa ossop`:
+
+```sh
+? Select a algorithm Anagram Verification
+✔ Executing!
+? Enter a first text não PoSsô
+? Enter a second text noa ossop
+```
+
+### Expected output:
+
+```sh
+✔ Theses text are anagrams of each other.
+```
+
 ## Available Algorithms
 - Find the Happy Numbers: Finds all happy numbers up to the specified number.
 - Permutable Palindrome Verification: can form a palindrome.
-## Options
-- algorithm run 1 <number>: Runs the "Find the Happy Numbers" algorithm with a single parameter that should be a number.
-- algorithm run 2 <string>: Runs the "Permutable Palindrome Verifications" algorithm with a single parameter that should be a string.
-
-
+- Anagram Verification: can form an anagram 
 
 
