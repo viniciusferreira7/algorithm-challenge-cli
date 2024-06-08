@@ -32,7 +32,7 @@ Welcome to the algorithm CLI
 
 Which you want to test? 
 
-? Select a algorithm manager (Use arrow keys)
+? Select a algorithm (Use arrow keys)
 ❯ Find the Happy Numbers
   Permutable Palindrome Verification
 - Anagram Verification ⚠️ (disabled)
@@ -47,7 +47,7 @@ Welcome to the algorithm CLI
 
 Which you want to test? 
 
-? Select a algorithm manager (Use arrow keys)
+? Select a algorithm (Use arrow keys)
 ❯ Find the Happy Numbers
   Permutable Palindrome Verification
 - Anagram Verification ⚠️ (disabled)
@@ -57,7 +57,7 @@ Which you want to test?
 #### To list happy numbers up to `19`:
 
 ```sh
-? Select a package manager Find the Happy Numbers
+? Select a package Find the Happy Numbers
 ✔ Executing!
 ? Enter a number 19
 ```
@@ -74,7 +74,7 @@ happy numbers between 1 and 19: 1,7,10,13,19
 ### To list happy numbers up to `45`:
 
 ```sh
-? Select a package manager Find the Happy Numbers
+? Select a package Find the Happy Numbers
 ✔ Executing!
 ? Enter a number 45
 ```
@@ -93,7 +93,7 @@ happy numbers between 1 and 45: 1,7,10,13,19,23,28,31,32,44
 ### To list happy numbers up to `test`:
 
 ```sh
-? Select a package manager Find the Happy Numbers
+? Select a package Find the Happy Numbers
 ✔ Executing!
 ? Enter a number test
 ```
@@ -114,7 +114,7 @@ Welcome t  the algorithm CLI
 
 Which you want to test? 
 
-? Select a algorithm manager
+? Select a algorithm
   Find the Happy Numbers
 ❯ Permutable Palindrome Verification
 - Anagram Verification ⚠️ (disabled)
@@ -124,7 +124,7 @@ Which you want to test?
 #### Verify if `civic` is a palindrome:
 
 ```sh
-? Select a algorithm manager Permutable Palindrome Verification
+? Select a algorithm Permutable Palindrome Verification
 ✔ Executing!
 ? Enter a text civic
 ```

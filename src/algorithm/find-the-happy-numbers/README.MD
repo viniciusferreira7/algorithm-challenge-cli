@@ -32,7 +32,7 @@ Create a JavaScript function called `findTheHappyNumbers` that determines whethe
 
 ### Function `findTheHappyNumbers`
 
-```javascript
+ ```typescript
 import chalk from 'chalk'
 import { sleep } from '../../utils/sleep';
 import { createSpinner } from 'nanospinner';

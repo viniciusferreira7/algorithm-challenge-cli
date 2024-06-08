@@ -10,7 +10,7 @@ Write a function `canFormPalindrome` that determines if any permutation of a pro
 
 ## Examples
 
-```javascript
+ ```typescript
 console.log(canFormPalindrome("civic")); // true (the word itself is a palindrome)
 console.log(canFormPalindrome("ivicc")); // true (permutation "civic" is a palindrome)
 console.log(canFormPalindrome("hello")); // false (cannot form a palindrome)
@@ -26,7 +26,7 @@ console.log(canFormPalindrome("ãâbb")); // true (permutation "abba" is a palin
 
 ### Function `canFormPalindrome`
 
-```javascript
+ ```typescript
 import chalk from 'chalk'
 
 function removeAccents(text: string) {

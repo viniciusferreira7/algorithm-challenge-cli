@@ -9,13 +9,14 @@ import { canFormPalindrome } from './algorithm/permutable-palindrome-verificatio
 import { sleep } from './utils/sleep';
 
 interface AlgorithmParams {
-  message: string;
   name: string
+  message: string
 }
 
 interface Algorithm {
   name: string;
   value: string;
+  description?: string
   params?: AlgorithmParams[];
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   execute?: (...args: any[]) => Promise<void>;
@@ -28,8 +29,8 @@ const algorithmList = [
     value: 'find_the_happy_numbers',
     params: [
       {
+        name: 'value',
         message: 'Enter a number',
-        name: 'value'
       }      
     ],
     execute: findTheHappyNumbers,
@@ -39,17 +40,26 @@ const algorithmList = [
     value: 'permutable_palindrome_verification',
     params: [
       {
+        name: 'text',
         message: 'Enter a text',
-        name: 'text'
       }      
     ],
     execute: canFormPalindrome,
   },
   {
-    name: 'Anagram Verification ⚠️',
+    name: 'Anagram Verification',
     value: 'anagram_verification',
-    // execute: canFormAnagrams,
-    disabled: true
+    params: [
+      {
+        name: 'first_text',
+        message: 'Enter a first text',
+      },
+      {
+        name: 'second_text',
+        message: 'Enter a second text',
+      },
+    ],
+    execute: canFormAnagrams,
   },
 ] satisfies Algorithm[]
 
@@ -69,7 +79,7 @@ async function askWhichAlgorithm(){
   console.log(`${chalk.bgBlue('Which you want to test? \n')}`)
 
   const answer = await select({
-    message: 'Select a algorithm manager',
+    message: 'Select a algorithm',
     choices: algorithmList,
   });
 
@@ -95,26 +105,33 @@ async function handleAnswer(answer: string){
 }
 
 async function handleInput(algorithm: Algorithm){
-  const arrayOfParams: string[] = []
+ if(algorithm.params){
+  const params =  await getParams(algorithm.params)
 
-  if(algorithm.params?.length){
-    for (const i in algorithm.params){
-
-      const value = await input({ message:  algorithm.params[i].message,  })
-      const param = Object.values({name:  algorithm.params[i].name, value})
-
-      arrayOfParams.push(...param)
-      
-    }
-    
-  }
-  
-  const params = Object.fromEntries([arrayOfParams])
 
   if(algorithm.execute){
     await algorithm.execute({...params})
   }
+ }
 
+}
+
+async function getParams(params: AlgorithmParams[]){
+  const arrayOfParams: string[][] = []
+
+  if(params?.length){
+    for (const i in params){
+
+      const value = await input({ message:  params[i].message,  })
+      const param = Object.values({name:  params[i].name, value})
+
+      arrayOfParams.push(param)
+      
+    }
+    
+  }
+
+  return Object.fromEntries(arrayOfParams)
 }
 
 await welcome()

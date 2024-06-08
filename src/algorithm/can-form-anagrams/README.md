@@ -12,7 +12,7 @@ Write a function `canFormAnagrams` that determines if two provided strings are a
 
 ## Examples
 
-```javascript
+ ```typescript
 console.log(canFormAnagrams("listen", "silent")); // true
 console.log(canFormAnagrams("hello", "world")); // false
 console.log(canFormAnagrams("debit card", "bad credit")); // true
@@ -31,15 +31,51 @@ To check if two strings are anagrams, you can count the occurrence of each lette
 
 Here's a code skeleton to get started:
 
-```javascript
-function canFormAnagrams(str1, str2) {
-  // Implement your logic here
+```typescript
+import { sleep } from 'bun'
+import chalk from 'chalk'
+import { createSpinner } from 'nanospinner'
+import { formatText } from '../../utils/format-text'
+
+interface CanFormAnagrams {
+  first_text: string
+  second_text: string
 }
 
-// Testing the function
-console.log(canFormAnagrams("listen", "silent")); // true
-console.log(canFormAnagrams("hello", "world")); // false
-console.log(canFormAnagrams("debit card", "bad credit")); // true
+export async function canFormAnagrams({ first_text, second_text }: CanFormAnagrams){
+  const spinner = createSpinner('Checking if the text could be an anagram').start()
+  await sleep(1000)
+
+  const firstTextInArray = formatText(first_text).split('')
+  const secondTextInArray = formatText(second_text).split('')
+
+  if(firstTextInArray.length !== secondTextInArray.length){
+    spinner.error({ text: chalk.redBright('These text cannot be an anagram.') })
+
+    return
+  }
+
+  const sameLetter: string[] = []
+
+  for(let i = 0; i <= firstTextInArray.length; i++){
+    const letter = secondTextInArray.some((letter) => {
+      return firstTextInArray[i] === letter
+    })
+
+    if(letter){
+      sameLetter.push(firstTextInArray[i])
+    }
+  }
+
+  const isSameLength = sameLetter.length === secondTextInArray.length && sameLetter.length === firstTextInArray.length
+
+  if(isSameLength){
+    spinner.success({ text: chalk.greenBright('Theses text are anagrams of each other.') })
+
+    } else {
+      spinner.error({ text: chalk.redBright('These text cannot be an anagram.') })
+      }
+}
 ```
 
 ## Explanation
@@ -50,5 +86,5 @@ Counter Comparison: After counting the letters in both strings, you need to comp
 
 ## Extra Challenge
 
-- [ ] Modify the `canFormAnagrams` function to consider accents and special characters, ensuring that the strings can be anagrams regardless of the presence of these characters.
+- [X] Modify the `canFormAnagrams` function to consider accents and special characters, ensuring that the strings can be anagrams regardless of the presence of these characters.
 ``` ```
