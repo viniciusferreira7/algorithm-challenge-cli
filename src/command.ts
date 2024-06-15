@@ -3,10 +3,12 @@ import select from '@inquirer/select';
 import chalk from 'chalk';
 import chalkAnimation from 'chalk-animation';
 import { createSpinner } from 'nanospinner';
-import { canFormAnagrams } from './algorithm/can-form-anagrams';
-import { findTheHappyNumbers } from './algorithm/find-the-happy-numbers';
-import { canFormPalindrome } from './algorithm/permutable-palindrome-verification';
+
 import { sleep } from './utils/sleep';
+import { canFormAnagrams } from './algorithms/can-form-anagrams';
+import { findTheHappyNumbers } from './algorithms/find-the-happy-numbers';
+import { canFormPalindrome } from './algorithms/permutable-palindrome-verification';
+import { subsequenceVerification } from './algorithms/subsequence-verification';
 
 interface AlgorithmParams {
   name: string
@@ -60,6 +62,21 @@ const algorithmList = [
       },
     ],
     execute: canFormAnagrams,
+  },
+  {
+    name: 'Subsequence Verification',
+    value: 'subsequence_verification',
+    params: [
+      {
+        name: 'first_text',
+        message: 'Enter a first text',
+      },
+      {
+        name: 'second_text',
+        message: 'Enter a second text',
+      },
+    ],
+    execute: subsequenceVerification,
   },
 ] satisfies Algorithm[]
 
