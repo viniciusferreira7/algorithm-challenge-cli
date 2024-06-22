@@ -3,6 +3,7 @@
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
+    "prestart": "cd ./src/algorithms && bun link && bun link algorithm-challenge-cli",
     "start": "algorithm"
   },
   "bin": {
