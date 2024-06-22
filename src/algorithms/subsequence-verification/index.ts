@@ -21,23 +21,39 @@ export async function subsequenceVerification({ first_text, second_text }: Subse
     return
   }
 
-  let sameNumberOfLetter = 0
-  let diffNumberOfLetter = 0
+  if(firstTextInArray.length > secondTextInArray.length){
+    spinner.error({ text: chalk.redBright('The first text supplied must be equal to or less than the second text.') })
 
-  while( sameNumberOfLetter < firstTextInArray.length ||  diffNumberOfLetter < secondTextInArray.length){
-    if(firstTextInArray[sameNumberOfLetter] === secondTextInArray[diffNumberOfLetter]){
-      sameNumberOfLetter++
+    return
   }
 
-  diffNumberOfLetter++
-}
+  const DIFF_LETTER = 'DIFF_LETTER'
 
-  if(sameNumberOfLetter === firstTextInArray.length){
+  const letters: string[] = []
+
+  // biome-ignore lint/complexity/noForEach: <explanation>
+  secondTextInArray.forEach((second) => {
+    const sameLetter = firstTextInArray.find(first => first === second)
+
+    if(sameLetter){
+      letters.push(sameLetter)
+
+    } else {
+      letters.push(DIFF_LETTER)
+    }
+  })
+
+  const removedDiffLetters = letters.filter(letter => letter !== DIFF_LETTER).join()
+
+  const isSubsequence = removedDiffLetters === firstTextInArray.join()
+
+  if(isSubsequence){
     spinner.success({ text: chalk.greenBright(`"${first_text}" can be a subsequence from "${second_text}"`) })
 
   } else {
     spinner.error({ text: chalk.redBright(`"${first_text}" cannot be a subsequence from "${second_text}"`)})
 
   }
+
 
 }
