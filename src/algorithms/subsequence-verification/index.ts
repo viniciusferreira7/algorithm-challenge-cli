@@ -55,5 +55,4 @@ export async function subsequenceVerification({ first_text, second_text }: Subse
 
   }
 
-
 }

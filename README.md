@@ -36,6 +36,7 @@ Which you want to test?
 ❯ Find the Happy Numbers
   Permutable Palindrome Verification
 - Anagram Verification
+- Subsequence Verification
 ```
 
 ### Run Algorithm: 
@@ -226,10 +227,73 @@ Which you want to test?
 
 #### [seem more about it](https://github.com/viniciusferreira7/algorithm-challenge-cli/tree/main/src/algorithm/can-form-anagrams)
 
+# Subsequence Verification
+## Selects subsequence Verification algorithm.
 
-## Available Algorithms
+```sh
+Welcome to the algorithm CLI
+
+Which you want to test? 
+
+? Select a algorithm
+  Find the Happy Numbers
+  Permutable Palindrome Verification
+  Anagram Verification
+❯ Subsequence Verification
+```
+
+### Example
+#### `abc` can be a subsequence from `ahbgdc`:
+
+```sh
+? Select a algorithm Anagram Verification
+✔ Executing!
+? Enter a first text abc
+? Enter a second text ahbgdc
+```
+
+### Expected output:
+```sh
+✔ "abc" can be a subsequence from "ahbgdc"
+```
+
+### `axc` can be a subsequence from `ahbgdc`:
+
+```sh
+? Select a algorithm Anagram Verification
+✔ Executing!
+? Enter a first text axc
+? Enter a second text ahbgdc
+```
+
+### Expected output:
+
+```sh
+✖ "axc" cannot be a subsequence from "ahbgdc"
+```
+
+### `acE` can be a subsequence from `abcde`:
+
+```sh
+? Select a algorithm Anagram Verification
+✔ Executing!
+? Enter a first text acE
+? Enter a second text abcde
+```
+
+### Expected output:
+
+```sh
+✖ "acE" cannot be a subsequence from "abcde"
+```
+
+#### [seem more about it](https://github.com/viniciusferreira7/algorithm-challenge-cli/tree/main/src/algorithms/subsequence-verification)
+
+
+# Available Algorithms
 - Find the Happy Numbers: Finds all happy numbers up to the specified number.
 - Permutable Palindrome Verification: can form a palindrome.
-- Anagram Verification: can form an anagram 
+- Anagram Verification: can form an anagram.
+- Subsequence Verification: is a sequence that can be derived from another sequence by removing some or no elements.
 
 
