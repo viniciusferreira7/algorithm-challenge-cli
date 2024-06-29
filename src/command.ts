@@ -78,11 +78,20 @@ const algorithmList = [
     ],
     execute: subsequenceVerification,
   },
+  {
+    name: 'Prime Number Sequence',
+    value: 'prime_number_sequence',
+    params: [
+      {
+        name: 'value',
+        message: 'Enter a number',
+      } 
+    ],
+    execute: subsequenceVerification,
+  },
 ] satisfies Algorithm[]
 
 let algorithm: string
-
-
 
 export async function welcome(){
   const rainbowTitle = chalkAnimation.glitch('Welcome to the algorithm CLI \n')
