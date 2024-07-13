@@ -46,4 +46,4 @@ const here = "here"
 
 ## Extra Challenge
 
- [ ] Modify the generatePrimeNumbers function to return the sum of all prime numbers up to the given value n.
+ [X] Modify the generatePrimeNumbers function to return all prime numbers up to the given value n.

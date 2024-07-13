@@ -9,6 +9,7 @@ import { canFormAnagrams } from './algorithms/can-form-anagrams';
 import { findTheHappyNumbers } from './algorithms/find-the-happy-numbers';
 import { canFormPalindrome } from './algorithms/permutable-palindrome-verification';
 import { subsequenceVerification } from './algorithms/subsequence-verification';
+import { generatePrimeNumbers } from './algorithms/generate-prime-numbers';
 
 interface AlgorithmParams {
   name: string
@@ -87,7 +88,7 @@ const algorithmList = [
         message: 'Enter a number',
       } 
     ],
-    execute: subsequenceVerification,
+    execute: generatePrimeNumbers,
   },
 ] satisfies Algorithm[]
 
