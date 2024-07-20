@@ -1,7 +1,7 @@
 import chalk from 'chalk'
-import { sleep } from '../../utils/sleep'
 import { createSpinner } from 'nanospinner'
 import { formatText } from '../../utils/format-text'
+import { sleep } from 'bun'
 
 export async function canFormPalindrome({ text }: {text: string}){
   const spinner = createSpinner('checking if the information could be a palindrome...').start()

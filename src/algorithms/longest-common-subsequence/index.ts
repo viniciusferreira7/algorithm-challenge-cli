@@ -21,6 +21,5 @@ export async function longestCommonSubsequence({ first_text, second_text }: Long
     return
   }
 
- 
-
+  
 }

@@ -1,5 +1,5 @@
+import { sleep } from 'bun';
 import chalk from 'chalk'
-import { sleep } from '../../utils/sleep';
 import { createSpinner } from 'nanospinner';
 
 function splitInNumber(value: number){

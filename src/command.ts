@@ -4,13 +4,13 @@ import chalk from 'chalk';
 import chalkAnimation from 'chalk-animation';
 import { createSpinner } from 'nanospinner';
 
-import { sleep } from './utils/sleep';
 import { canFormAnagrams } from './algorithms/can-form-anagrams';
 import { findTheHappyNumbers } from './algorithms/find-the-happy-numbers';
 import { canFormPalindrome } from './algorithms/permutable-palindrome-verification';
 import { subsequenceVerification } from './algorithms/subsequence-verification';
 import { generatePrimeNumbers } from './algorithms/generate-prime-numbers';
 import { longestCommonSubsequence } from './algorithms/longest-common-subsequence';
+import { sleep } from 'bun';
 
 interface AlgorithmParams {
   name: string
@@ -111,7 +111,7 @@ const algorithmList = [
 export async function welcome(){
   const rainbowTitle = chalkAnimation.glitch('Welcome to the algorithm CLI \n')
 
-  await sleep()
+  await sleep(2000)
   rainbowTitle.stop()
 
 }
