@@ -37,6 +37,7 @@ Which you want to test?
   Permutable Palindrome Verification
 - Anagram Verification
 - Subsequence Verification
+- Prime Number Sequence
 ```
 
 ### Run Algorithm: 
@@ -52,6 +53,8 @@ Which you want to test?
 ❯ Find the Happy Numbers
   Permutable Palindrome Verification
 - Anagram Verification
+- Subsequence Verification
+- Prime Number Sequence
 ```
 
 ### Example
@@ -178,6 +181,8 @@ Which you want to test?
   Find the Happy Numbers
   Permutable Palindrome Verification
 ❯ Anagram Verification
+- Subsequence Verification
+- Prime Number Sequence
 ```
 
 ### Example
@@ -228,7 +233,7 @@ Which you want to test?
 #### [seem more about it](https://github.com/viniciusferreira7/algorithm-challenge-cli/tree/main/src/algorithm/can-form-anagrams)
 
 # Subsequence Verification
-## Selects subsequence Verification algorithm.
+## Enter a number.
 
 ```sh
 Welcome to the algorithm CLI
@@ -240,6 +245,7 @@ Which you want to test?
   Permutable Palindrome Verification
   Anagram Verification
 ❯ Subsequence Verification
+- Prime Number Sequence
 ```
 
 ### Example
@@ -289,11 +295,85 @@ Which you want to test?
 
 #### [seem more about it](https://github.com/viniciusferreira7/algorithm-challenge-cli/tree/main/src/algorithms/subsequence-verification)
 
+# Prime Number Sequence
+## Enter a number.
+
+```sh
+Welcome to the algorithm CLI
+
+Which you want to test? 
+
+? Select a algorithm
+  Find the Happy Numbers
+  Permutable Palindrome Verification
+  Anagram Verification
+  Subsequence Verification
+❯ Prime Number Sequence
+```
+
+### Example
+#### `30` is not a prime number:
+
+```sh
+? Select a algorithm Anagram Verification
+✔ Executing!
+? Enter a number 30.
+```
+
+### Expected output:
+```sh
+✖ 30 is not a prime a number!
+
+ The Prime numbers up to 30: 2,3,5,7,11,13,17,19,23,29 
+
+ The sum of all prime numbers up to 30 is 129
+```
+
+#### `37` is a prime number:
+
+```sh
+? Select a algorithm Anagram Verification
+✔ Executing!
+? Enter a number 37.
+```
+
+### Expected output:
+```sh
+✔ 37 is a prime a number!
+
+ The Prime numbers up to 37: 2,3,5,7,11,13,17,19,23,29,31,37 
+
+ The sum of all prime numbers up to 37 is 197
+```
+
+
+#### `120` is not a prime number:
+
+```sh
+? Select a algorithm Anagram Verification
+✔ Executing!
+? Enter a number 120.
+```
+
+### Expected output:
+```sh
+✖ 120 is not a prime a number!
+
+ The Prime numbers up to 120: 2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113
+
+ The sum of all prime numbers up to 120 is 1593
+```
+
+#### [seem more about it](https://github.com/viniciusferreira7/algorithm-challenge-cli/tree/main/src/algorithms/generate-prime-numbers)
+
+
+
+
 
 # Available Algorithms
 - Find the Happy Numbers: Finds all happy numbers up to the specified number.
 - Permutable Palindrome Verification: can form a palindrome.
 - Anagram Verification: can form an anagram.
 - Subsequence Verification: is a sequence that can be derived from another sequence by removing some or no elements.
-
+- Prime Number Sequence: Prime numbers are numbers greater than 1 that can only be divided by 1 and themselves. In this challenge, you need to generate a sequence of prime numbers up to a given value.
 
