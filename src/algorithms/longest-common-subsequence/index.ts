@@ -21,34 +21,32 @@ export async function longestCommonSubsequence({ first_text, second_text }: long
     return
   }
 
-  const sameLetter: string[] = []
 
-  const subsequence: string[][] = []
+const subsequence: string[][] = []
 
-  
+const DIFF_LETTER = 'DIFFERENT_LETTER'
+
+const copyOfSecondTextInArray  = secondTextInArray.map(() => DIFF_LETTER)
+
+
  firstTextInArray.forEach((firstText, firstTextIndex) => {
 
-   if (firstText[firstTextIndex + 1]){
-    const a =  firstText.concat(firstText[firstTextIndex + 1])
-    console.log({a}, firstTextIndex + 1)
-
-    subsequence.push([a])
-   }
-
-  secondTextInArray.forEach((secondText, _) => {
-
-    if(firstText === secondText) {
-
-        sameLetter.push(secondText)
-
-
-    }
-  })
+  secondTextInArray.forEach((a, index) => {
+      if(a === firstText){
+        copyOfSecondTextInArray.splice(index, 1, firstText)
+      }
+    })
 
  })
 
-//  const su
+ //TODO://Segue essa logica de "aeg" é uma subsequência de "abcdefg", mas não necessariamente contígua ✔️
+ //TODO: Refatorar a função
+ //TODO: retorna o comprimento da maior subsequência comum entre elas.
 
- console.log({sameLetter, subsequence})
+ console.log(copyOfSecondTextInArray.filter((item) => item !== DIFF_LETTER).join('') === firstTextInArray.join(''))
+
   
 }
+
+// "ABCBDAB", "BDCAB"
+
