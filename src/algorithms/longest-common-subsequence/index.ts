@@ -24,26 +24,33 @@ export async function longestCommonSubsequence({ first_text, second_text }: long
 
 const subsequence: string[][] = []
 
-const DIFF_LETTER = 'DIFFERENT_LETTER'
+const EMPTY = 'EMPTY'
 
-const copyOfSecondTextInArray  = secondTextInArray.map(() => DIFF_LETTER)
+const copyOfSecondTextInArray  = secondTextInArray.map(() => EMPTY)
 
 
- firstTextInArray.forEach((firstText, firstTextIndex) => {
+ firstTextInArray.forEach((firstText, _) => {
 
-  secondTextInArray.forEach((a, index) => {
-      if(a === firstText){
+  secondTextInArray.forEach((secondText, index) => {
+      if(secondText === firstText){
         copyOfSecondTextInArray.splice(index, 1, firstText)
       }
     })
 
  })
 
- //TODO://Segue essa logica de "aeg" é uma subsequência de "abcdefg", mas não necessariamente contígua ✔️
- //TODO: Refatorar a função
- //TODO: retorna o comprimento da maior subsequência comum entre elas.
+ const removeEmpty = copyOfSecondTextInArray.filter((item) => item !== EMPTY)
 
- console.log(copyOfSecondTextInArray.filter((item) => item !== DIFF_LETTER).join('') === firstTextInArray.join(''))
+ const sequence = removeEmpty.join('')
+
+
+ if(sequence === firstTextInArray.join('')){
+  spinner.success({text: `${chalk.greenBright(`${first_text}`)} is a subsequence of ${chalk.greenBright(`${second_text}`)}`})
+} else {
+   spinner.error({text: `${chalk.redBright(`${first_text}`)} is not a subsequence of ${chalk.redBright(`${second_text}`)}`})
+ }
+
+ //TODO: retorna o comprimento da maior subsequência comum entre elas.
 
   
 }
