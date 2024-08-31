@@ -9,7 +9,6 @@ import { findTheHappyNumbers } from './algorithms/find-the-happy-numbers';
 import { canFormPalindrome } from './algorithms/permutable-palindrome-verification';
 import { subsequenceVerification } from './algorithms/subsequence-verification';
 import { generatePrimeNumbers } from './algorithms/generate-prime-numbers';
-import { longestCommonSubsequence } from './algorithms/longest-common-subsequence';
 import { sleep } from 'bun';
 
 interface AlgorithmParams {
@@ -91,21 +90,7 @@ const algorithmList = [
     ],
     execute: generatePrimeNumbers,
   },
-  {
-    name: 'Longest Common Subsequence',
-    value: 'longest_common_subsequence',
-    params: [
-      {
-        name: 'first_text',
-        message: 'Enter a first text',
-      },
-      {
-        name: 'second_text',
-        message: 'Enter a second text',
-      },
-    ],
-    execute: longestCommonSubsequence,
-  },
+ 
 ] satisfies Algorithm[]
 
 export async function welcome(){

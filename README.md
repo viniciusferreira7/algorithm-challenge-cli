@@ -1,4 +1,4 @@
-# Algorithm CLI - ⚠️ in development
+# Algorithm CLI
 
 ## Description
 This CLI offers a selection of algorithms that you can list and execute directly from the terminal. Currently, the CLI supports the "Find the Happy Numbers" algorithm.
